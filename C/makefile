@@ -12,6 +12,7 @@ default:
     $(CC) $(INCLUDE) $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
     $(CC) $(INCLUDE) $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
     $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o $(CFLAGS)
+    $(CC) -mfp16-format=ieee $(CFLAGS)
 
 O1:
     mkdir -p bin obj
