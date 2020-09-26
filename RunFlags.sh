@@ -9,8 +9,8 @@ for ((i=0;i<7;i++)) do
 
     make -C C ${param[$i]}
     ./RunCBase.sh
-    cp data/CBaseTimes.txt data/CBaseTimes_${param[$i]}
-    cp data/CBaseTemps.txt data/CBaseTemps_${param[$i]}
+    cp data/CBaseTimes.txt data/CBaseTimes_${param[$i]}.txt
+    cp data/CBaseTemps.txt data/CBaseTemps_${param[$i]}.txt
     sleep 20
 done
 
