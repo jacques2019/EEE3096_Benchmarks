@@ -7,7 +7,7 @@ echo "Running C Base Benchmarks"
 
 for ((i=0;i<200;i++)) do
 	time=( $(make -C C run_threaded) )
-	times[$i]=${time[21]}
+	times[$i]=${time[23]}
 	temp=$(vcgencmd measure_temp)
 	temps[$i]=${temp:5:4}
 
