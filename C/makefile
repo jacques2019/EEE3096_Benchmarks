@@ -13,6 +13,48 @@ default:
     $(CC) $(INCLUDE) $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
     $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o $(CFLAGS)
 
+O1:
+    mkdir -p bin obj
+    $(CC) $(INCLUDE) $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
+    $(CC) $(INCLUDE) $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
+    $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o -O1 $(CFLAGS)
+
+O2:
+    mkdir -p bin obj
+    $(CC) $(INCLUDE) $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
+    $(CC) $(INCLUDE) $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
+    $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o -O2 $(CFLAGS)
+
+O3:
+    mkdir -p bin obj
+    $(CC) $(INCLUDE) $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
+    $(CC) $(INCLUDE) $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
+    $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o -O3 $(CFLAGS)
+
+Ofast:
+    mkdir -p bin obj
+    $(CC) $(INCLUDE) $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
+    $(CC) $(INCLUDE) $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
+    $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o -Ofast $(CFLAGS)
+
+Os:
+    mkdir -p bin obj
+    $(CC) $(INCLUDE) $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
+    $(CC) $(INCLUDE) $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
+    $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o -Os $(CFLAGS)
+
+Og:
+    mkdir -p bin obj
+    $(CC) $(INCLUDE) $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
+    $(CC) $(INCLUDE) $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
+    $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o $(CFLAGS)
+
+funroll-loops:
+    mkdir -p bin obj
+    $(CC) $(INCLUDE) $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
+    $(CC) $(INCLUDE) $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
+    $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o -funroll-loops $(CFLAGS)
+
 threaded:
     mkdir -p bin obj
     $(CC) $(INCLUDE) $(CFLAGS) -c src/CHeterodyning_threaded.c -o obj/CHeterodyning_threaded.o
