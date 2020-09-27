@@ -14,6 +14,12 @@ default:
     $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o $(CFLAGS)
     $(CC) -mfp16-format=ieee $(CFLAGS)
 
+MAX:
+    mkdir -p bin obj
+    $(CC) $(INCLUDE) -O1 -Os -funroll-loops $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
+    $(CC) $(INCLUDE) -O1 -Os -funroll-loops $(CFLAGS) -c Tools/Timer.cpp -o obj/Timer.o
+    $(CC) -o bin/CHeterodyning obj/CHeterodyning.o obj/Timer.o -O1 -Os -funroll-loops $(CFLAGS)
+
 O1:
     mkdir -p bin obj
     $(CC) $(INCLUDE) -O1 $(CFLAGS) -c src/CHeterodyning.c -o obj/CHeterodyning.o
