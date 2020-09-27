@@ -5,7 +5,7 @@ declare -a temps
 
 echo "Running C Base with 16 bit Benchmarks"
 
-for ((i=0;i<100;i++))do
+for ((i=0;i<200;i++)) do
 	time=( $(make -C C run) )
 	times[$i]=${time[21]}
 	temp=$(vcgencmd measure_temp)
