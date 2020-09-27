@@ -3,7 +3,7 @@
 declare -a times
 declare -a temps
 
-echo "Running C Base Benchmarks"
+echo "Running C Threaded Benchmarks"
 
 for ((i=0;i<200;i++)) do
 	time=( $(make -C C run_threaded) )
